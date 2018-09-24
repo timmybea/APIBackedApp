@@ -67,19 +67,43 @@
 			isa = PBXGroup;
 			children = (
 				B0B6A32A21586D2C00307A97 /* AppDelegate.swift */,
-				B0B6A32C21586D2C00307A97 /* ViewController.swift */,
 				B0B6A32E21586D2C00307A97 /* Main.storyboard */,
 				B0B6A33121586D2E00307A97 /* Assets.xcassets */,
 				B0B6A33321586D2E00307A97 /* LaunchScreen.storyboard */,
 				B0B6A33621586D2E00307A97 /* Info.plist */,
-				B04B7B9D21592BF6002FF6A9 /* PersonCell.swift */,
+				B0C652C32159971300C11E92 /* Controller */,
+				B0C652C42159973A00C11E92 /* View */,
+				B0C652C52159974800C11E92 /* Model */,
+			);
+			path = APIBackedApp;
+			sourceTree = "<group>";
+		};
+		B0C652C32159971300C11E92 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B0B6A32C21586D2C00307A97 /* ViewController.swift */,
 				B04B7B9F21592CB8002FF6A9 /* APIService.swift */,
-				B04B7BA121592D9C002FF6A9 /* Person.swift */,
-				B04B7BA321592E30002FF6A9 /* JSONContainer.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		B0C652C42159973A00C11E92 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B04B7B9D21592BF6002FF6A9 /* PersonCell.swift */,
 				B04B7BA5215930B7002FF6A9 /* CachedImageView.swift */,
 				B04B7BA7215930CD002FF6A9 /* Extension_UIImage.swift */,
 			);
-			path = APIBackedApp;
+			path = View;
+			sourceTree = "<group>";
+		};
+		B0C652C52159974800C11E92 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B04B7BA321592E30002FF6A9 /* JSONContainer.swift */,
+				B04B7BA121592D9C002FF6A9 /* Person.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

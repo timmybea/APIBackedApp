@@ -8,6 +8,7 @@
 
 import UIKit
 
+//MARK: Properties and inherited methods
 class ViewController: UIViewController {
 
     var dataSource = [Person]() {
@@ -17,8 +18,6 @@ class ViewController: UIViewController {
             }
         }
     }
-
-//    var dataSource = ["Name One", "Name Two", "Name Three", "Name Four", "Name Five"]
     
     lazy var tableView: UITableView = {
         let tv = UITableView()
@@ -30,8 +29,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        view.backgroundColor = UIColor.blue
         
         APIService.fetchData(with: .json) { (data, error) in
             guard error == nil else { print(error!.localizedDescription); return }
@@ -53,17 +50,16 @@ class ViewController: UIViewController {
     }
 }
 
+//MARK: UITableView delegate and datasource
 extension ViewController : UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return self.personData.count
         return dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: PersonCell.reuseIdentifier, for: indexPath) as! PersonCell
         cell.setup(for: self.dataSource[indexPath.row])
-//        cell.setup(for: self.personData[indexPath.row])
         
         return cell
     }

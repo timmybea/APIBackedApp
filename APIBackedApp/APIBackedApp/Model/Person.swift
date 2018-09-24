@@ -10,8 +10,6 @@ import UIKit
 
 struct Person : Decodable {
     
-    static var personData = [Person]()
-    
     var email: URL
     var firstName: String
     var id: String
@@ -47,6 +45,14 @@ struct Person : Decodable {
         
         self.cacheImage()
     }
+    
+
+    
+}
+
+extension Person {
+    
+    static var personData = [Person]()
     
     static func getPeople(from json: Data) -> [Person] {
         

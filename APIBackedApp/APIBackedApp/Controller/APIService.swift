@@ -8,28 +8,10 @@
 
 import UIKit
 
+//MARK: init and public interface
 struct APIService {
     
-    static fileprivate let baseURL: String = "https://timmybea.github.io/StaticHostingDemo/"
-    
-    enum APIURL {
-        case json
-        case image(endPoint: String)
-        
-        var path: String {
-            switch self {
-            case .json: return APIService.baseURL + "objectData.json"
-            case .image(let endPoint): return APIService.baseURL + "personImage/" + endPoint
-            }
-        }
-        
-        var url: URL {
-            switch self {
-            case .json: return URL(string: self.path)!
-            case .image(_): return URL(string: self.path)!
-            }
-        }
-    }
+    private init() {}
     
     enum APIServiceError: Error {
         case noData
@@ -53,5 +35,30 @@ struct APIService {
             
             }.resume()
         
+    }
+}
+
+//MARK: APIURL enum
+extension APIService {
+    
+    static fileprivate let baseURL: String = "https://timmybea.github.io/StaticHostingDemo/"
+    
+    enum APIURL {
+        case json
+        case image(endPoint: String)
+        
+        var path: String {
+            switch self {
+            case .json: return APIService.baseURL + "objectData.json"
+            case .image(let endPoint): return APIService.baseURL + "personImage/" + endPoint
+            }
+        }
+        
+        var url: URL {
+            switch self {
+            case .json: return URL(string: self.path)!
+            case .image(_): return URL(string: self.path)!
+            }
+        }
     }
 }
